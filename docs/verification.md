@@ -1,6 +1,6 @@
 # Verification — initial build and first-use checks
 
-Verified on October 14, 2026. These results cover the first build step's mechanical checks. The learner trial and second-step correction/accessibility checks remain open.
+Verified on October 14, 2026. These results cover the first build step's mechanical checks. The learner confirmed the first-use trial worked as expected. Second-step correction/accessibility checks remain open.
 
 ## Renderer and skill validation
 
@@ -33,7 +33,6 @@ The Codex in-app browser tested a loopback server restricted to a fictional outp
 
 ## Not yet verified
 
-- The learner's own fresh Codex chat, early hands-on review, and feedback.
 - Specific and ambiguous correction conversations, refusal/pause behavior, and corrected browser downloads.
 - 200% browser zoom, screen-reader interaction, and the complete applicable Section 508 criteria review. No conformance claim is made.
 - Final review, learning wrap-up, app map, and shipping deliverables.
@@ -48,3 +47,7 @@ The learner profile, local credentials, and generated outputs are ignored and ex
 ## Initial test repair
 
 The first renderer test run caught an unsubstituted embedded-text token because its name contained digits. The substitution pattern was corrected to include digits; all nine tests then passed.
+
+## Learner feedback
+
+On October 14 the learner reported: "ok tested it and it works as expected". This completes the early hands-on checkpoint with no requested changes. The final correction trial and ship-readiness review remain open.

@@ -15,7 +15,7 @@ Preserve existing ignore rules for the learner profile and credential files. Bef
 
 ## Slices
 
-- [ ] **1. Talk through accomplishments and keep a first summary**
+- [x] **1. Talk through accomplishments and keep a first summary**
   Becomes usable: A discoverable Codex skill guides a supportive conversation, helps find work or non-work accomplishments, offers a summary after three distinct examples, honors an explicit earlier request, and produces readable HTML and text files with download controls.
   Why now: Proves the distinctive conversation-to-summary experience immediately, including the real Codex invocation and document output that the rest of the build depends on.
   PRD ref: `prd.md > The Core Journey`, `Supportive Accomplishment Discovery`, `Summary Offer`, `Visual Summary and Download`, `Look and Feel`
@@ -37,7 +37,7 @@ Preserve existing ignore rules for the learner profile and credential files. Bef
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 1, before its commit in learn mode; before slice 2 in fast mode
+- [x] Early usable behavior explored — after slice 1, before its commit in learn mode; before slice 2 in fast mode
 - [ ] Final kick-the-tires exploration and feedback completed — after slice 2's mechanical verification
 
 Learn mode pauses after each verified step for an explanation and learner trial before committing. Fast mode uses less explanation while retaining the planned early and final hands-on checks. With two slices, the main difference is depth of walkthrough, not removal of learner ownership.
@@ -67,3 +67,5 @@ Activity mode: Planned live walkthrough of the running output and source, with a
 
 - October 14 resume: initial checkpoint `08a94b9` is pushed to GitHub. Nine renderer tests and the bundled skill validator pass. Fictional agent trials passed the two-to-three offer, acceptance, early summary, and fresh-agent catalog discovery. Browser HTML/text downloads, content comparison, keyboard order/skip navigation, narrow layout, and sampled contrast checks passed. Details and remaining boundaries are in `docs/verification.md`. Slice 1 remains unchecked pending the learner trial; slice 2 has not begun.
 - The October 13, 9:41 p.m. Eastern follow-up was not scheduled before interruption. Work resumed manually October 14; no new future schedule was created.
+
+- October 14 learner feedback: "ok tested it and it works as expected". Early hands-on checkpoint accepted with no requested changes. Slice 1 is complete; proceed to slice 2 verification and its final learner trial.

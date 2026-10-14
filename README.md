@@ -2,7 +2,7 @@
 
 A Codex skill that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
 
-**Initial build:** document rendering is implemented and nine automated tests pass. Full conversational trials, browser downloads, accessibility verification, and learner review are still in progress. This is not a claim of Section 508 conformance.
+**Initial build:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. Learner review, conversational correction trials, and fuller accessibility checks remain in progress. This is not a claim of Section 508 conformance.
 
 ## Try it in Codex
 

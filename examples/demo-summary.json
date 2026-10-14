@@ -1,0 +1,17 @@
+{
+  "title": "More to be proud of than you think",
+  "accomplishments": [
+    {"id": "a1", "text": "Helped a new teammate learn the team's weekly reporting process by walking them through it step by step.", "source_excerpt": "I showed a new teammate how our weekly reporting process works, step by step."},
+    {"id": "a2", "text": "Volunteered at a neighborhood food pantry and helped organize donated items so the team could find them.", "source_excerpt": "At the neighborhood food pantry I helped organize donated items so the team could find them."},
+    {"id": "a3", "text": "Made time for a short walk on three days last week while navigating a difficult job search.", "source_excerpt": "Last week I took a short walk on three days even though the job search has been difficult."}
+  ],
+  "encouragement": [
+    "You have made time to help someone learn, contribute to your neighborhood, and take a small step for yourself. Those experiences still count during a difficult search.",
+    "A slow response or a rejection does not erase what you have done. You can return to these examples without needing to turn every day into a productivity test."
+  ],
+  "next_steps": [
+    "Choose one work example and jot down what you explained to your teammate. That detail could help you describe your contribution in a résumé or interview.",
+    "Keep this summary somewhere easy to revisit. Add another example whenever one comes to mind; it does not have to be a major milestone."
+  ],
+  "is_demo": true
+}

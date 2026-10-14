@@ -1,0 +1,13 @@
+# Personal learning context
+/devpost/learner-profile.md
+
+# Local credentials; keep a secret-free example shareable
+.env
+.env.*
+!.env.example
+
+# Generated documents and local runtime files
+/outputs/
+__pycache__/
+*.py[cod]
+.DS_Store

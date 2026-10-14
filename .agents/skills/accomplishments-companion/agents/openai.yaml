@@ -1,0 +1,4 @@
+interface:
+  display_name: "Accomplishments Companion"
+  short_description: "Find real accomplishments and keep an encouraging summary"
+  default_prompt: "Use $accomplishments-companion to help me reflect on my accomplishments and create a summary I can keep."

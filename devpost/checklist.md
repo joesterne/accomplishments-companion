@@ -50,15 +50,16 @@ Record actual feedback and any agreed refinements here as they arise. A report t
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
+- [x] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
+- [x] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
+- [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
-Activity and evidence: Not yet performed. Connect the learner's skill/agent portability goal to one actual conversation-to-summary action after final review.
-Route and stops: Planned route through `SKILL.md`, `scripts/render_summary.py`, and `assets/summary.html`; confirm actual symbols and paths after implementation.
-Edit outcome: Not yet offered.
-Reflection: Not yet offered; any personal answer belongs only in the ignored learner profile.
-Activity mode: Planned live walkthrough of the running output and source, with an explicit static fallback if needed.
+Activity and evidence: Source-based recap connected the actual correction trial to the learner's skill/agent portability goal. The map was shown in the browser; source paths and symbols were checked. No learner-led editor navigation, optional edit, or mastery is claimed.
+Route and stops: `SKILL.md > Correct through conversation`; `render_summary.py > validate(), html_document(), render()`; `assets/summary.html > .intro, download-html, download-text`. These are a reference route, not completed learner navigation.
+Edit outcome: Optional safe introductory-text edit offered in the map; not performed or required.
+Reflection: Optional transfer question offered with the wrap-up; no answer required and no learner response invented.
+Activity mode: Brief source recap and browser-shown standalone map. Native editor inspection was unavailable; this was not an interactive editor exercise.
+Map checks: All relative source links resolve in the repository, named symbols exist, content has no script/network dependency, browser structure and layout inspected, and a details control collapsed/expanded with Enter. Snapshot implementation commit: `dcc1b08`.
 
 ## Revisions
 
@@ -74,3 +75,5 @@ Activity mode: Planned live walkthrough of the running output and source, with a
 - Optional Discord projects-forum sharing suggestion given after the slice-1 checkpoint.
 
 - Final learner response on October 14: "It works" following the correction and final-review prompt. Final hands-on checkpoint and review accepted with no requested changes. Slice 2 complete with documented accessibility verification limits retained.
+
+- Learning wrap-up delivered as an evidence-based source recap with `devpost/app-map.html`; optional practice and reflection do not block shipping. All build-workflow checkpoints are now recorded.

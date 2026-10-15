@@ -49,7 +49,7 @@ The helper makes no network calls and does not save a raw transcript. It renders
 
 ## Project progress
 
-The approved scope, requirements, and technical plan are in `devpost/`. The [build checklist](devpost/checklist.md) records unfinished work and the learn-mode checkpoints. The hackathon's final demo video and submission are not complete.
+The approved scope, requirements, and technical plan are in `devpost/`. The [build checklist](devpost/checklist.md) records both completed build steps and learner reviews. The [app map](devpost/app-map.html) explains the code, its portability boundaries, and where to make changes. The hackathon's final demo video and submission are not complete.
 
 ## Corrections and recovery
 

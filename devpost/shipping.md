@@ -19,7 +19,8 @@ Checked October 14, 2026. Build, final learner review, and the app map are compl
 
 ## Remaining
 
-- [ ] Publish an approved open-source license and provide its repository file URL. A proposed MIT license is held under ignored `outputs/shipping-review/` pending the owner's approval.
+- [x] Owner approved the MIT license with Copyright (c) 2026 Joe Sterne; included as root `LICENSE`. Repository file URL: https://github.com/joesterne/accomplishments-companion/blob/main/LICENSE
+- [ ] Replace the general license-information URL in the Devpost form with the repository license URL.
 - [ ] Record a short working demo and upload it to YouTube or Vimeo with public reviewer access.
 - [ ] Verify the actual video link without authentication and replace the channel placeholder in the submission.
 - [ ] Learner completes and reviews the project story and technology-requirement explanation in their own words.

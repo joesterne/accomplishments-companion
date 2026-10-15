@@ -56,3 +56,7 @@ The approved scope, requirements, and technical plan are in `devpost/`. The [bui
 In the same conversation, identify the accomplishment and corrected detail, such as "Change three days to two days; keep the other accomplishments the same." The companion should clarify an ambiguous edit and give you links to a new revision. Previously downloaded copies remain unchanged.
 
 If generation fails, use the previous successful files while retrying. If browser downloads are unavailable, use the exact local HTML/text paths the helper returned. Open the HTML in an ordinary browser and use Save As. The Codex in-app browser used for testing blocks local-file URLs; the recorded browser tests used a loopback server restricted to fictional demo files.
+
+## License
+
+[MIT License](LICENSE). Copyright (c) 2026 Joe Sterne.

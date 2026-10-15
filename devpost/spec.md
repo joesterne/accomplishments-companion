@@ -200,3 +200,10 @@ Shipping progress and remaining learner-owned tasks: `devpost/shipping.md`. No o
 After the Codex proof of concept was accepted, the learner requested a Claude-compatible version. The original Codex behavior and deferred-feature boundary remain unchanged. A generated, self-contained Claude Code skill now lives under `.claude/skills/accomplishments-companion/`, with an upload ZIP produced under ignored `outputs/packages/`. Both use the original renderer, template, and JSON contract. Host-specific guidance covers Claude discovery, output locations, file presentation, and fallback when execution is unavailable.
 
 See `docs/claude.md` for setup, source references, maintenance, and test results. Thirteen local tests and skill validation pass; a live Claude trial is pending because the installed Claude Code is not signed in. This extension is not evidence of hosted Claude download behavior or Gemini compatibility.
+
+
+## Gemini portability extension — October 15, 2026
+
+The learner subsequently requested a Gemini version. `.gemini/skills/accomplishments-companion-gemini/` contains a self-contained adapter; its distinct name avoids the documented precedence of `.agents/skills/` for same-name skills. `scripts/package_gemini.py` produces a Gemini Apps upload ZIP with `SKILL.md` at the archive root. The shared packaging utility preserves the Claude interface and artifacts. The conversation, renderer, template, and JSON contract retain the original product behavior.
+
+Sixteen local tests pass. Gemini CLI 0.63.0 discovers the adapter in an isolated workspace alongside the original skill. No signed-in model conversation or Gemini Apps upload/download trial is claimed. See `docs/gemini.md` for setup and the validation boundary. Existing shipping tasks remain unchanged.

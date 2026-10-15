@@ -29,7 +29,7 @@ Hosted Claude must present both generated files through its own file-delivery me
 
 ## Maintaining the two versions
 
-The existing `.agents/skills/accomplishments-companion/` remains the shared source for the conversation and renderer. `packaging/claude-runtime.md` holds the Claude-specific file-delivery guidance. `scripts/package_claude.py` combines an explicit allowlist of these files into the Claude Code folder and upload ZIP. It shortens the Claude discovery description, routes to runtime instructions, and adjusts two local-file assumptions. The renderer, template, and JSON contract remain byte-for-byte identical.
+The existing `.agents/skills/accomplishments-companion/` remains the shared source for the conversation and renderer. `packaging/claude-runtime.md` holds the Claude-specific file-delivery guidance. `scripts/package_claude.py` uses the shared `scripts/skill_package.py` utility to combine an explicit allowlist of these files into the Claude Code folder and upload ZIP. It shortens the Claude discovery description, routes to runtime instructions, and adjusts two local-file assumptions. The renderer, template, and JSON contract remain byte-for-byte identical.
 
 Edit the shared source or runtime adapter, then rebuild. Do not edit the generated Claude copy directly. Check for stale generated files with:
 

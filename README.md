@@ -1,6 +1,6 @@
 # Accomplishments Companion
 
-A skill for Codex and Claude that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
+A skill for Codex, Claude, and Gemini that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
 
 **Proof of concept:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. The learner accepted the first-use trial; specific/ambiguous corrections, pause behavior, and corrected downloads also passed. The learner accepted both hands-on trials and the final review. The [remaining accessibility checks](docs/accessibility.md) are documented. This is not a claim of Section 508 conformance.
 
@@ -20,6 +20,14 @@ The helper uses Python 3.9+ and only its standard library; no extra API key or r
 
 See [Claude setup and validation](docs/claude.md) for installation details, file-delivery differences, and the pending live trial. Local package checks pass; a live Claude conversation and hosted downloads have not yet been verified.
 
+## Try it in Gemini
+
+**Gemini CLI:** open this repository, check `/skills list`, and ask to use **accomplishments-companion-gemini**. The distinct name avoids a collision with the original skill in `.agents/skills/`.
+
+**Gemini Apps:** run `python3 scripts/package_gemini.py` and upload `outputs/packages/accomplishments-companion-gemini.zip` under **Customize → Skills → Upload**, if Skills is available for your account. The package includes the same Python renderer, with host-specific file-delivery guidance and a text fallback when execution is unavailable.
+
+See [Gemini setup and validation](docs/gemini.md). Local rendering, packaging, and isolated Gemini CLI discovery are verified; signed-in conversations and Gemini Apps downloads remain pending.
+
 ## Render the fictional demo
 
 From the repository root:
@@ -38,7 +46,7 @@ The fixture is fictional and visibly marked as a demonstration. Never replace it
 python3 -m unittest discover -s tests -v
 ```
 
-The tests cover output consistency, a one-accomplishment summary, source-excerpt exclusion, Unicode and literal markup, invalid input, revisions, and failed-write recovery. They do not establish conversational behavior or browser accessibility. See [verification notes](docs/verification.md) for the actual boundaries.
+The 16 tests cover Claude/Gemini packaging and isolated rendering as well as output consistency, a one-accomplishment summary, source-excerpt exclusion, Unicode and literal markup, invalid input, revisions, and failed-write recovery. They do not establish conversational behavior or browser accessibility. See [verification notes](docs/verification.md) for the actual boundaries.
 
 ## How the pieces fit
 
@@ -47,7 +55,7 @@ The tests cover output consistency, a one-accomplishment summary, source-excerpt
 - `scripts/render_summary.py`: validation and consistent HTML/text generation.
 - `assets/summary.html`: the offline visual template and download controls.
 
-These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude package reuses the conversation workflow, JSON contract, renderer, and template, with a small host-specific adapter. The package is tested locally; live Claude behavior is pending. Gemini has not been tested.
+These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude and Gemini packages reuse the conversation workflow, JSON contract, renderer, and template, with small host-specific adapters. Both packages are tested locally, and Gemini CLI discovery is verified in an isolated workspace. Live Claude and Gemini conversations and hosted downloads remain pending.
 
 ## Privacy and boundaries
 

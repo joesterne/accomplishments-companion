@@ -1,4 +1,3 @@
-import importlib.util
 import io
 import json
 from pathlib import Path
@@ -9,9 +8,7 @@ import unittest
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location('package_claude', ROOT / 'scripts/package_claude.py')
-package = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(package)
+from scripts import package_claude as package
 
 
 class ClaudePackageTests(unittest.TestCase):

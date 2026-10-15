@@ -183,3 +183,13 @@ No database, hosted backend, analytics, connector, or remote font is required. R
 **Validation risks, not unresolved product choices:** verify actual Codex discovery, browser downloads, faithful conversational behavior, and applicable accessibility requirements. If a required capability cannot be demonstrated, explain the limitation and agree any behavior change before changing the product.
 
 The learner approved this blueprint, including the proposed implementation choices. The build checklist will specify the ordered work and learner checkpoints.
+
+## Sharing Instructions
+
+Public source: https://github.com/joesterne/accomplishments-companion (anonymous access checked October 14, 2026). Use this repository URL in the submission's Try it out field. The planning documents remain under `devpost/`.
+
+Demo video: not yet recorded or linked. The actual form requires a video link; a YouTube channel URL is not a recording. Follow the current [official rules](https://learn-ai-basics.devpost.com/rules) and verify reviewer access after upload. Add the final video URL here once supplied and checked.
+
+License: the actual submission form requires a URL to an open-source license file within the repository. The proposed MIT file is pending owner approval; do not claim the repository is MIT-licensed until it is published.
+
+Shipping progress and remaining learner-owned tasks: `devpost/shipping.md`. No optional deployment is selected.

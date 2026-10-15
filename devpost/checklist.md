@@ -25,7 +25,7 @@ Preserve existing ignore rules for the learner profile and credential files. Bef
   Learner check: Start a fresh Codex task in this project, invoke the Accomplishments Companion skill, and try the conversation using fictional or non-sensitive examples. Accept a summary, open both outputs, and report whether the questions, encouragement, and visual result fit the intended experience.
   Commit: `Add Codex accomplishments conversation and downloadable summaries`
 
-- [ ] **2. Correct the summary and verify the complete experience**
+- [x] **2. Correct the summary and verify the complete experience**
   Becomes usable: The person corrects an accomplishment through the same conversation and gets an accurate revised summary; ambiguous edits, failed generation, and download problems have understandable recovery paths. The final experience has documented accessibility and behavioral checks.
   Why now: Builds on a working conversation and renderer, incorporates early learner feedback, and proves that the take-away remains trustworthy after changes or failures.
   PRD ref: `prd.md > Corrections Through Conversation`, `States and Boundaries`, `Visual Summary and Download`, `Look and Feel`
@@ -38,13 +38,13 @@ Preserve existing ignore rules for the learner profile and credential files. Bef
 ## Hands-on Checkpoints
 
 - [x] Early usable behavior explored — after slice 1, before its commit in learn mode; before slice 2 in fast mode
-- [ ] Final kick-the-tires exploration and feedback completed — after slice 2's mechanical verification
+- [x] Final kick-the-tires exploration and feedback completed — after slice 2's mechanical verification
 
 Learn mode pauses after each verified step for an explanation and learner trial before committing. Fast mode uses less explanation while retaining the planned early and final hands-on checks. With two slices, the main difference is depth of walkthrough, not removal of learner ownership.
 
 ## Final Review
 
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+- [x] Final review complete — feedback resolved and learner confirms ready to ship
 
 Record actual feedback and any agreed refinements here as they arise. A report that no changes are needed is a valid outcome. Fixes require verification, commit, and a learner retry of affected behavior before final completion.
 
@@ -69,3 +69,8 @@ Activity mode: Planned live walkthrough of the running output and source, with a
 - The October 13, 9:41 p.m. Eastern follow-up was not scheduled before interruption. Work resumed manually October 14; no new future schedule was created.
 
 - October 14 learner feedback: "ok tested it and it works as expected". Early hands-on checkpoint accepted with no requested changes. Slice 1 is complete; proceed to slice 2 verification and its final learner trial.
+
+- Slice 2 verification: specific/ambiguous corrections and pause behavior passed. Corrected HTML/text downloads match and preserve unrelated content and prior revisions. Renderer tests and validator pass. Scoped accessibility review is in `docs/accessibility.md`; native browser zoom and screen-reader checks are explicitly unverified, with doubled-text QA recorded separately. No code repair was needed. Await the final learner correction trial before the slice-2 commit and completion box.
+- Optional Discord projects-forum sharing suggestion given after the slice-1 checkpoint.
+
+- Final learner response on October 14: "It works" following the correction and final-review prompt. Final hands-on checkpoint and review accepted with no requested changes. Slice 2 complete with documented accessibility verification limits retained.

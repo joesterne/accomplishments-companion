@@ -2,7 +2,7 @@
 
 A Codex skill that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
 
-**Initial build:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. Learner review, conversational correction trials, and fuller accessibility checks remain in progress. This is not a claim of Section 508 conformance.
+**Proof of concept:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. The learner accepted the first-use trial; specific/ambiguous corrections, pause behavior, and corrected downloads also passed. The learner accepted both hands-on trials and the final review. The [remaining accessibility checks](docs/accessibility.md) are documented. This is not a claim of Section 508 conformance.
 
 ## Try it in Codex
 
@@ -50,3 +50,9 @@ The helper makes no network calls and does not save a raw transcript. It renders
 ## Project progress
 
 The approved scope, requirements, and technical plan are in `devpost/`. The [build checklist](devpost/checklist.md) records unfinished work and the learn-mode checkpoints. The hackathon's final demo video and submission are not complete.
+
+## Corrections and recovery
+
+In the same conversation, identify the accomplishment and corrected detail, such as "Change three days to two days; keep the other accomplishments the same." The companion should clarify an ambiguous edit and give you links to a new revision. Previously downloaded copies remain unchanged.
+
+If generation fails, use the previous successful files while retrying. If browser downloads are unavailable, use the exact local HTML/text paths the helper returned. Open the HTML in an ordinary browser and use Save As. The Codex in-app browser used for testing blocks local-file URLs; the recorded browser tests used a loopback server restricted to fictional demo files.

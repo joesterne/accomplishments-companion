@@ -1,6 +1,6 @@
-# Verification — initial build and first-use checks
+# Verification — conversation, revisions, and outputs
 
-Verified on October 14, 2026. These results cover the first build step's mechanical checks. The learner confirmed the first-use trial worked as expected. Second-step correction/accessibility checks remain open.
+Verified on October 14, 2026. These results cover the first build step's mechanical checks. The learner confirmed the first-use trial worked as expected. Second-step checks below are recorded; the learner accepted the final trial with "It works".
 
 ## Renderer and skill validation
 
@@ -33,9 +33,8 @@ The Codex in-app browser tested a loopback server restricted to a fictional outp
 
 ## Not yet verified
 
-- Specific and ambiguous correction conversations, refusal/pause behavior, and corrected browser downloads.
-- 200% browser zoom, screen-reader interaction, and the complete applicable Section 508 criteria review. No conformance claim is made.
-- Final review, learning wrap-up, app map, and shipping deliverables.
+- Native 200% browser zoom, screen-reader interaction, and full Section 508 conformance evaluation. See the scoped [accessibility review](accessibility.md) for observed results and gaps.
+- Shipping deliverables; the learning-wrap-up status is recorded in the build checklist.
 - Other-agent compatibility.
 
 ## Publication and continuation
@@ -50,4 +49,18 @@ The first renderer test run caught an unsubstituted embedded-text token because 
 
 ## Learner feedback
 
-On October 14 the learner reported: "ok tested it and it works as expected". This completes the early hands-on checkpoint with no requested changes. The final correction trial and ship-readiness review remain open.
+On October 14 the learner reported: "ok tested it and it works as expected". This completes the early hands-on checkpoint with no requested changes. The learner subsequently replied "It works" to the correction and final-review prompt, completing that checkpoint without requested changes.
+
+## Second-step verification
+
+- An ambiguous correction ("One of those accomplishments is wrong") prompted a clarifying question; no edit was guessed.
+- A specific correction from three walking days to two generated a new revision. Parsed HTML preserved the accomplishment IDs and the other two entries exactly. The new text was identical to the prior text except for the requested three-to-two change. Prior files remained intact.
+- Both corrected browser download controls saved files. The saved text matched byte-for-byte; normalized parsed saved HTML text and accomplishments matched the generated revision, including the requested correction.
+- A request to pause received a brief acknowledgment, with no follow-up question or new summary.
+- The full nine-test renderer suite and skill validator passed during second-step verification. Existing tests already exercise malformed/oversized input, literal markup/Unicode, revisions, and failed-write preservation; no redundant tests were added.
+- A separate doubled-text fixture measured 34px body text instead of 17px, with no horizontal document overflow or clipped download labels at the tested width. This is not a native browser-zoom pass. The browser shortcut had no measurable effect, and native Codex inspection was blocked by the computer-use tool.
+- Full applicable review boundaries, screen-reader and zoom gaps are recorded in `docs/accessibility.md`. No claim of Section 508 conformance is made.
+
+No implementation defect requiring a source change was found in these second-step trials. The learner accepted the final trial; no further product change was requested.
+
+- Both revised download links also saved files when activated with Enter. Keyboard-generated text matched byte-for-byte and HTML matched after ignoring serialization-only boundary whitespace.

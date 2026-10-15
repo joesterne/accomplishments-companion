@@ -9,4 +9,4 @@ Use fictional content. Inspect real responses; do not count matching instruction
 5. Ambiguous correction: say an example is wrong without identifying which one. Expect clarification before editing.
 6. Decline: decline a summary offer or ask to pause. Expect the preference to be respected without repeated pressure.
 
-Record observed results in docs/verification.md. Opening, two-to-three threshold, accepted generation, and explicit early request passed in fictional agent trials on October 14, 2026. Correction, ambiguous correction, and decline/pause trials remain pending.
+Record observed results in docs/verification.md. Opening, two-to-three threshold, accepted generation, and explicit early request passed in fictional agent trials on October 14, 2026. Specific correction, ambiguous correction, and a request to pause also passed in continued fictional trials. Declining a summary offer before generation was not separately exercised.

@@ -1,6 +1,6 @@
 # Accomplishments Companion
 
-A Codex skill that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
+A skill for Codex and Claude that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
 
 **Proof of concept:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. The learner accepted the first-use trial; specific/ambiguous corrections, pause behavior, and corrected downloads also passed. The learner accepted both hands-on trials and the final review. The [remaining accessibility checks](docs/accessibility.md) are documented. This is not a claim of Section 508 conformance.
 
@@ -11,6 +11,14 @@ Open this repository as a Codex project and ask to use **Accomplishments Compani
 Talk about things you have done or feel proud of. The companion uses relevant questions about work and everyday life when examples are hard to find. It offers a summary after three distinct accomplishments, or honors an earlier explicit request. Corrections stay in the conversation.
 
 The helper uses Python 3.9+ and only its standard library; no extra API key or runtime packages are required. Conversation access and usage limits come from your existing Codex setup.
+
+## Try it in Claude
+
+**Claude Code:** open this repository in Claude Code and enter `/accomplishments-companion`. The self-contained skill is in `.claude/skills/accomplishments-companion/`; it uses the same renderer and template as Codex.
+
+**Claude chat:** run `python3 scripts/package_claude.py`, then upload `outputs/packages/accomplishments-companion-claude.zip` under **Customize → Skills** and enable it. Code execution and file creation must be available. Ask Claude to use Accomplishments Companion.
+
+See [Claude setup and validation](docs/claude.md) for installation details, file-delivery differences, and the pending live trial. Local package checks pass; a live Claude conversation and hosted downloads have not yet been verified.
 
 ## Render the fictional demo
 
@@ -39,11 +47,11 @@ The tests cover output consistency, a one-accomplishment summary, source-excerpt
 - `scripts/render_summary.py`: validation and consistent HTML/text generation.
 - `assets/summary.html`: the offline visual template and download controls.
 
-These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. Claude and Gemini compatibility has not been tested.
+These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude package reuses the conversation workflow, JSON contract, renderer, and template, with a small host-specific adapter. The package is tested locally; live Claude behavior is pending. Gemini has not been tested.
 
 ## Privacy and boundaries
 
-The helper makes no network calls and does not save a raw transcript. It renders the content passed to it into local files. Codex's conversation retention still follows its own settings; this is not a promise of local-only AI processing. Generated revisions remain until you delete them.
+The helper makes no network calls and does not save a raw transcript. It renders the content passed to it into local files. Each host's conversation retention still follows its own settings; this is not a promise of local-only AI processing. Generated revisions remain until you delete them.
 
 `outputs/`, local credentials, and the personal learner profile are excluded from commits. Supporting excerpts used to check accomplishment fidelity do not appear in generated documents. The companion does not invent achievements, provide guided mindfulness exercises, or guarantee employment or emotional improvement.
 

@@ -193,3 +193,10 @@ Demo video: not yet recorded or linked. The actual form requires a video link; a
 License: MIT, approved by the owner on October 14, 2026. Use the repository license URL in the submission: https://github.com/joesterne/accomplishments-companion/blob/main/LICENSE
 
 Shipping progress and remaining learner-owned tasks: `devpost/shipping.md`. No optional deployment is selected.
+
+
+## Subsequent portability extension — October 15, 2026
+
+After the Codex proof of concept was accepted, the learner requested a Claude-compatible version. The original Codex behavior and deferred-feature boundary remain unchanged. A generated, self-contained Claude Code skill now lives under `.claude/skills/accomplishments-companion/`, with an upload ZIP produced under ignored `outputs/packages/`. Both use the original renderer, template, and JSON contract. Host-specific guidance covers Claude discovery, output locations, file presentation, and fallback when execution is unavailable.
+
+See `docs/claude.md` for setup, source references, maintenance, and test results. Thirteen local tests and skill validation pass; a live Claude trial is pending because the installed Claude Code is not signed in. This extension is not evidence of hosted Claude download behavior or Gemini compatibility.

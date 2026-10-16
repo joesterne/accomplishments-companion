@@ -45,7 +45,7 @@ For another workspace, run `python3 scripts/package_copilot.py`, extract `output
 | Claude chat | Passed | Upload/activation pending | Pending | Hosted attachments pending |
 | Gemini CLI | Passed | Passed in isolated workspace | Pending | Pending |
 | Gemini Apps | Passed | Upload/activation pending | Pending | Hosted attachments pending |
-| Copilot in VS Code | Passed | Pending | Pending | Pending |
+| Copilot in VS Code | Passed | Passed in isolated workspace | Passed in fictional trial, including early summary | Integrated preview and HTML/text downloads passed |
 | Copilot CLI | Passed | Pending | Pending | Pending |
 
 See the host guides and [verification notes](docs/verification.md) for evidence and limits. Copilot support here targets interactive sessions; Microsoft 365 Copilot and Copilot Studio are not included.
@@ -77,7 +77,7 @@ The 19 tests cover Claude/Gemini/Copilot packaging and isolated rendering as wel
 - `scripts/render_summary.py`: validation and consistent HTML/text generation.
 - `assets/summary.html`: the offline visual template and download controls.
 
-These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude, Gemini, and Copilot packages reuse the conversation workflow, JSON contract, renderer, and template, with small host-specific adapters. All three packages are tested locally, and Gemini CLI discovery is verified in an isolated workspace. Live Claude, Gemini, and Copilot conversations and host-specific file delivery remain pending.
+These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude, Gemini, and Copilot packages reuse the conversation workflow, JSON contract, renderer, and template, with small host-specific adapters. All three packages are tested locally, and Gemini CLI discovery is verified in an isolated workspace. Copilot in VS Code also passed a fictional conversation, correction, early-summary, and browser-download trial. Live Claude and Gemini conversations, their host-specific file delivery, and Copilot CLI behavior remain pending.
 
 ## Privacy and boundaries
 

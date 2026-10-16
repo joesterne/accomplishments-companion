@@ -207,3 +207,10 @@ See `docs/claude.md` for setup, source references, maintenance, and test results
 The learner subsequently requested a Gemini version. `.gemini/skills/accomplishments-companion-gemini/` contains a self-contained adapter; its distinct name avoids the documented precedence of `.agents/skills/` for same-name skills. `scripts/package_gemini.py` produces a Gemini Apps upload ZIP with `SKILL.md` at the archive root. The shared packaging utility preserves the Claude interface and artifacts. The conversation, renderer, template, and JSON contract retain the original product behavior.
 
 Sixteen local tests pass. Gemini CLI 0.63.0 discovers the adapter in an isolated workspace alongside the original skill. No signed-in model conversation or Gemini Apps upload/download trial is claimed. See `docs/gemini.md` for setup and the validation boundary. Existing shipping tasks remain unchanged.
+
+
+## GitHub Copilot portability extension — October 15, 2026
+
+The learner requested GitHub Copilot support. The generated adapter at `.github/skills/accomplishments-companion-copilot/` targets interactive VS Code agent mode and Copilot CLI, with the shared conversation, renderer, template, and JSON contract. `scripts/package_copilot.py` creates a directory ZIP for extraction and installation. The distinct skill name separates it from other host adapters; it does not change global Copilot settings or grant shell permissions.
+
+Nineteen local tests and all adapter consistency checks pass. Live Copilot discovery, conversational behavior, and file opening remain pending; neither the `copilot` nor `code` executable was available on the development shell path. See `docs/copilot.md` and the README compatibility table. Microsoft 365 Copilot, Copilot Studio, and cloud coding-task delivery are outside this adapter's verified scope.

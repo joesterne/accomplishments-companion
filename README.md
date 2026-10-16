@@ -1,6 +1,6 @@
 # Accomplishments Companion
 
-A skill for Codex, Claude, and Gemini that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
+A skill for Codex, Claude, Gemini, and GitHub Copilot that helps a discouraged job seeker recognize real accomplishments and keep a supportive summary for motivation or future résumé work.
 
 **Proof of concept:** nine renderer tests and skill validation pass. Fictional Codex trials verified the three-accomplishment offer and an explicit early summary; both browser downloads and initial keyboard/layout checks passed. The learner accepted the first-use trial; specific/ambiguous corrections, pause behavior, and corrected downloads also passed. The learner accepted both hands-on trials and the final review. The [remaining accessibility checks](docs/accessibility.md) are documented. This is not a claim of Section 508 conformance.
 
@@ -28,6 +28,28 @@ See [Claude setup and validation](docs/claude.md) for installation details, file
 
 See [Gemini setup and validation](docs/gemini.md). Local rendering, packaging, and isolated Gemini CLI discovery are verified; signed-in conversations and Gemini Apps downloads remain pending.
 
+## Try it in GitHub Copilot
+
+Open this repository in **VS Code with Copilot Agent mode** or an interactive **Copilot CLI** session. Ask to use **accomplishments-companion-copilot**. The self-contained adapter lives in `.github/skills/accomplishments-companion-copilot/`.
+
+For another workspace, run `python3 scripts/package_copilot.py`, extract `outputs/packages/accomplishments-companion-copilot.zip`, and copy the skill folder into that workspace's `.github/skills/`. See [Copilot setup and validation](docs/copilot.md).
+
+## Compatibility and verification
+
+“Passed” means a check was actually performed. Local renderer tests do not establish a host's conversation or download behavior.
+
+| Host | Local package/renderer | Skill discovery in host | Conversation and corrections | Host file delivery |
+| --- | --- | --- | --- | --- |
+| Codex | Passed | Passed | Passed in fictional and learner trials | HTML/text and browser downloads passed |
+| Claude Code | Passed | Pending | Pending | Pending |
+| Claude chat | Passed | Upload/activation pending | Pending | Hosted attachments pending |
+| Gemini CLI | Passed | Passed in isolated workspace | Pending | Pending |
+| Gemini Apps | Passed | Upload/activation pending | Pending | Hosted attachments pending |
+| Copilot in VS Code | Passed | Pending | Pending | Pending |
+| Copilot CLI | Passed | Pending | Pending | Pending |
+
+See the host guides and [verification notes](docs/verification.md) for evidence and limits. Copilot support here targets interactive sessions; Microsoft 365 Copilot and Copilot Studio are not included.
+
 ## Render the fictional demo
 
 From the repository root:
@@ -46,7 +68,7 @@ The fixture is fictional and visibly marked as a demonstration. Never replace it
 python3 -m unittest discover -s tests -v
 ```
 
-The 16 tests cover Claude/Gemini packaging and isolated rendering as well as output consistency, a one-accomplishment summary, source-excerpt exclusion, Unicode and literal markup, invalid input, revisions, and failed-write recovery. They do not establish conversational behavior or browser accessibility. See [verification notes](docs/verification.md) for the actual boundaries.
+The 19 tests cover Claude/Gemini/Copilot packaging and isolated rendering as well as output consistency, a one-accomplishment summary, source-excerpt exclusion, Unicode and literal markup, invalid input, revisions, and failed-write recovery. They do not establish conversational behavior or browser accessibility. See [verification notes](docs/verification.md) for the actual boundaries.
 
 ## How the pieces fit
 
@@ -55,7 +77,7 @@ The 16 tests cover Claude/Gemini packaging and isolated rendering as well as out
 - `scripts/render_summary.py`: validation and consistent HTML/text generation.
 - `assets/summary.html`: the offline visual template and download controls.
 
-These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude and Gemini packages reuse the conversation workflow, JSON contract, renderer, and template, with small host-specific adapters. Both packages are tested locally, and Gemini CLI discovery is verified in an isolated workspace. Live Claude and Gemini conversations and hosted downloads remain pending.
+These files are self-contained. Discovery paths, UI metadata, permissions, and file presentation vary between agents. The Claude, Gemini, and Copilot packages reuse the conversation workflow, JSON contract, renderer, and template, with small host-specific adapters. All three packages are tested locally, and Gemini CLI discovery is verified in an isolated workspace. Live Claude, Gemini, and Copilot conversations and host-specific file delivery remain pending.
 
 ## Privacy and boundaries
 

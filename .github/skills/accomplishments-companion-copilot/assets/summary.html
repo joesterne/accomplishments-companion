@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>@@TITLE@@ · Accomplishments Companion</title>
+<style>
+:root { --paper:#f5f6f2; --surface:#ffffff; --ink:#173c35; --body:#30433e; --muted:#52655e; --line:#d1dcd4; --accent:#176858; --soft:#eaf2ec; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--body); font:1.0625rem/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+a { color:#115e50; text-underline-offset:4px; }
+a:focus-visible,button:focus-visible { outline:3px solid #9c4a10; outline-offset:5px; }
+.skip { position:absolute; left:16px; top:-100px; background:white; padding:12px; z-index:10; }
+.skip:focus { top:10px; }
+.wrap { width:min(100% - 48px,960px); margin:0 auto; }
+.masthead { display:flex; flex-wrap:wrap; justify-content:space-between; gap:15px; align-items:center; padding:30px 0; border-bottom:1px solid var(--line); }
+.brand { display:flex; align-items:center; gap:12px; font-weight:700; font-size:.9rem; color:var(--ink); }
+.mark { display:inline-grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--ink); color:white; font-size:1.1rem; }
+.caption { color:var(--muted); font-size:.82rem; }
+header { padding:64px 0 36px; max-width:760px; }
+.eyebrow { text-transform:uppercase; font-size:.75rem; font-weight:750; letter-spacing:.12em; color:var(--accent); margin:0 0 14px; }
+h1 { color:var(--ink); font-size:clamp(2.35rem,6vw,3.9rem); font-weight:650; line-height:1.13; letter-spacing:-.045em; margin:0 0 24px; overflow-wrap:anywhere; }
+h2 { color:var(--ink); font-size:1.45rem; font-weight:650; line-height:1.3; letter-spacing:-.025em; margin:0 0 20px; }
+p { margin:0 0 16px; overflow-wrap:anywhere; white-space:pre-line; }
+.intro { font-size:1.17rem; color:var(--muted); max-width:650px; }
+.demo { margin-bottom:22px; border:1px solid #ae9867; background:#fff6df; border-radius:10px; padding:10px 15px; color:#5c450f; font-size:.9rem; }
+.actions { display:flex; gap:12px; flex-wrap:wrap; margin:24px 0 8px; }
+.actions a { display:inline-flex; min-height:46px; align-items:center; justify-content:center; padding:10px 20px; border:1px solid var(--accent); border-radius:9px; text-decoration:none; font-weight:650; color:var(--accent); background:white; }
+.actions a.primary { background:var(--accent); color:white; }
+.actions a:hover { background:var(--soft); color:var(--ink); }
+.saved-note { font-size:.85rem; color:var(--muted); }
+main { padding-bottom:32px; }
+.accomplishments { background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:34px; }
+.accomplishments ol { list-style:none; counter-reset:achievement; padding:0; margin:0; }
+.accomplishments li { counter-increment:achievement; display:grid; grid-template-columns:38px 1fr; gap:18px; border-top:1px solid var(--line); padding:23px 0; break-inside:avoid; }
+.accomplishments li:first-child { border-top:0; padding-top:4px; }
+.accomplishments li:last-child { padding-bottom:4px; }
+.accomplishments li::before { content:counter(achievement,decimal-leading-zero); color:var(--accent); font-size:.83rem; font-weight:750; padding-top:4px; }
+.accomplishments li p { margin:0; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px; }
+.encouragement,.next { border-radius:18px; padding:30px; }
+.encouragement { background:var(--soft); border:1px solid #cadbd0; }
+.next { background:white; border:1px solid var(--line); }
+.encouragement p:last-child { margin:0; }
+.next ul { padding-left:22px; margin:0; }
+.next li { padding-left:4px; margin-bottom:13px; overflow-wrap:anywhere; white-space:pre-line; }
+.next li:last-child { margin:0; }
+.future { border-top:1px solid var(--line); margin-top:32px; padding-top:26px; }
+.future h2 { font-size:1rem; margin-bottom:8px; }
+.future p { font-size:.9rem; color:var(--muted); }
+footer { padding:24px 0 36px; border-top:1px solid var(--line); color:var(--muted); font-size:.85rem; }
+footer p { max-width:720px; margin:0; }
+@media(max-width:700px) { .wrap { width:min(100% - 32px,960px); } header { padding-top:38px; } .grid { grid-template-columns:1fr; } .accomplishments,.encouragement,.next { padding:24px; } .accomplishments li { grid-template-columns:27px 1fr; gap:12px; } }
+@media print { body { background:white; font-size:11pt; } .wrap { width:100%; } .skip,.actions,.saved-note { display:none; } header { padding:28px 0 20px; } h1 { font-size:30pt; } .accomplishments,.encouragement,.next { border-radius:0; } .grid { display:block; } .encouragement,.next { margin-top:16px; } .future { break-inside:avoid; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to accomplishments</a>
+<div class="wrap">
+<div class="masthead"><div class="brand"><span class="mark" aria-hidden="true">↗</span>Accomplishments Companion</div><span class="caption">A reminder to return to</span></div>
+<header>
+@@DEMO@@
+<p class="eyebrow">Your experience matters</p>
+<h1>@@TITLE@@</h1>
+<p class="intro">Real things you’ve done. Strengths you can return to. A few possibilities for what comes next.</p>
+<nav class="actions" aria-label="Keep your summary">
+<a class="primary" id="download-html" href="summary.html" download="accomplishments-summary.html">Download summary</a>
+<a id="download-text" href="summary.txt" download="accomplishments-summary.txt">Download plain text</a>
+</nav>
+<p class="saved-note">Keep this copy, or ask for a correction in your Codex conversation.</p>
+</header>
+<main id="main" tabindex="-1">
+<section class="accomplishments" aria-labelledby="accomplishments-heading">
+<p class="eyebrow">Things to be proud of</p><h2 id="accomplishments-heading">Your accomplishments</h2>
+<ol role="list">@@ACCOMPLISHMENTS@@</ol>
+</section>
+<div class="grid">
+<section class="encouragement" aria-labelledby="encouragement-heading"><h2 id="encouragement-heading">Encouragement to keep</h2>@@ENCOURAGEMENT@@</section>
+<section class="next" aria-labelledby="next-heading"><h2 id="next-heading">Possible next steps</h2><ul>@@NEXT_STEPS@@</ul></section>
+</div>
+<section class="future" aria-labelledby="future-heading"><h2 id="future-heading">Looking ahead</h2><p>@@NOTICE@@</p></section>
+</main>
+<footer><p>Built from the experiences you shared. You can use your own examples for motivation or as a starting point for résumé work. Suggestions are yours to accept, adapt, or leave.</p></footer>
+</div>
+<script id="plain-text-data" type="application/octet-stream">@@TEXT_B64@@</script>
+<script>
+(function () {
+  'use strict';
+  // Capture the standalone document before assigning session-local Blob URLs.
+  const originalHTML = '<!doctype html>\n' + document.documentElement.outerHTML;
+  try {
+    const encoded = document.getElementById('plain-text-data').textContent.trim();
+    const bytes = Uint8Array.from(atob(encoded), c => c.charCodeAt(0));
+    const textURL = URL.createObjectURL(new Blob([bytes], {type: 'text/plain;charset=utf-8'}));
+    const htmlURL = URL.createObjectURL(new Blob([originalHTML], {type: 'text/html;charset=utf-8'}));
+    document.getElementById('download-text').href = textURL;
+    document.getElementById('download-html').href = htmlURL;
+  } catch (_) {
+    // Adjacent file links remain available when browser Blob APIs are unavailable.
+  }
+}());
+</script>
+</body>
+</html>

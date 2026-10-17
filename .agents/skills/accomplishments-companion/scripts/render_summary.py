@@ -1,16 +1,15 @@
-#!/usr/bin/env python3
 """Render a faithful, offline summary pair without network calls or saved input."""
 import argparse
 import base64
 import html
 import json
 import os
-from pathlib import Path
 import re
 import shutil
 import sys
 import tempfile
 import uuid
+from pathlib import Path
 
 MAX_BYTES = 256 * 1024
 MAX_TEXT = 4000

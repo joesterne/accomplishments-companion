@@ -1,11 +1,11 @@
 import io
 import json
-from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
 import zipfile
+from pathlib import Path
 
 from scripts import package_gemini as package
 from scripts import skill_package as common

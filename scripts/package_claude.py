@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the Claude skill and a deterministic upload ZIP from shared sources."""
 import argparse
 import sys

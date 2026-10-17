@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the Gemini CLI skill and a Gemini Apps ZIP with SKILL.md at its root."""
 import argparse
 import sys

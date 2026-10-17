@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the GitHub Copilot skill and an installable directory ZIP."""
 import argparse
 import sys

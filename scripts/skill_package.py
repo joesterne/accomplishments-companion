@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
 """Shared packaging for host adapters and deterministic skill archives."""
 import io
-from pathlib import Path
 import zipfile
+from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DESCRIPTION = ('Help job seekers recognize real accomplishments, create a supportive HTML/text '

@@ -1,11 +1,11 @@
 import io
 import json
-from pathlib import Path
 import subprocess
 import sys
 import tempfile
 import unittest
 import zipfile
+from pathlib import Path
 
 from scripts import package_copilot as package
 from scripts import skill_package as common
@@ -48,7 +48,7 @@ class CopilotPackageTests(unittest.TestCase):
             self.assertEqual(contents, {key: Path(value).read_bytes()
                                       for key, value in json.loads(canonical.stdout).items()})
             before = set(output.iterdir())
-            invalid = subprocess.run(command, input=b'{invalid', cwd=root, capture_output=True)
+            invalid = subprocess.run(command, input=b'{invalid', cwd=root, capture_output=True, check=False)
             self.assertNotEqual(invalid.returncode, 0)
             self.assertEqual(before, set(output.iterdir()))
             self.assertEqual(contents, {key: Path(value).read_bytes() for key, value in paths.items()})

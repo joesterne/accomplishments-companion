@@ -3,11 +3,10 @@ import copy
 import importlib.util
 import io
 import json
-from html.parser import HTMLParser
-from pathlib import Path
-import re
 import tempfile
 import unittest
+from html.parser import HTMLParser
+from pathlib import Path
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -81,7 +80,7 @@ class RendererTests(unittest.TestCase):
         return paths, html, text, reader
 
     def test_three_examples_have_matching_text_and_accessible_structure(self):
-        paths, html, text, reader = self.render()
+        paths, _html, text, reader = self.render()
         self.assertTrue(Path(paths['html_path']).is_absolute())
         self.assertEqual(reader.language, 'en')
         self.assertEqual(sum(tag == 'h1' for tag, content in reader.headings), 1)
@@ -167,9 +166,8 @@ class RendererTests(unittest.TestCase):
             if path.name == 'summary.txt':
                 raise OSError('simulated write failure')
             return original(path, *args, **kwargs)
-        with patch.object(Path, 'write_text', fail_text):
-            with self.assertRaises(OSError):
-                renderer.render(self.data, self.parent)
+        with patch.object(Path, 'write_text', fail_text), self.assertRaises(OSError):
+            renderer.render(self.data, self.parent)
         self.assertEqual(set(self.parent.iterdir()), before)
         self.assertEqual(Path(previous['text_path']).read_text(), previous_text)
 

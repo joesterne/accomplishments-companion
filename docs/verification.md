@@ -35,7 +35,7 @@ The Codex in-app browser tested a loopback server restricted to a fictional outp
 
 - Native 200% browser zoom, screen-reader interaction, and full Section 508 conformance evaluation. See the scoped [accessibility review](accessibility.md) for observed results and gaps.
 - Shipping deliverables; the learning-wrap-up status is recorded in the build checklist.
-- Other-agent compatibility.
+- Hosted Claude chat and Gemini Apps delivery. Later [live CLI validation](cli-validation-2026-10-17.md) covers Claude Code, Gemini CLI, and Copilot CLI, including the initial grounding findings and subsequent focused retests; [Copilot's guide](copilot.md) records its separate VS Code trial.
 
 ## Publication and continuation
 

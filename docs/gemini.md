@@ -50,6 +50,8 @@ python3 -m unittest discover -s tests -v
 
 ## Verification — October 15, 2026
 
+Historical packaging baseline. The October 17 live CLI results below supersede the live activation and conversation gaps in this section.
+
 - All 16 tests pass: nine renderer tests, four Claude packaging tests, and three Gemini packaging tests.
 - Gemini skill format validation and both package consistency checks pass.
 - An extracted Gemini ZIP renders from an unrelated directory, without the source repository, producing bytes identical to the original renderer. A correction creates new files and leaves the previous revision and unrelated accomplishment text intact.
@@ -57,6 +59,14 @@ python3 -m unittest discover -s tests -v
 - Gemini CLI 0.63.0 successfully lists both skill names as enabled at their correct paths in an isolated test workspace containing copies of the shared and Gemini skills. The test used a temporary CLI profile with trust restricted to that temporary workspace; the user's account settings and trusted folders were not changed. No model request was made.
 - The first discovery attempt under the existing local profile did not return output before it was stopped. A clean profile initially reported the expected untrusted-workspace restriction; the isolated trusted-fixture test above then established discovery. This does not verify the user's normal profile or authentication.
 - Live Gemini activation and conversation, the three-example offer, ambiguous correction behavior, and Gemini Apps upload/download delivery remain unverified. Test with fictional data before using a personal summary.
+
+## Live Gemini CLI trial — October 17, 2026
+
+Gemini CLI 0.63.0 used the existing signed-in profile, with Auto selecting `gemini-3.8-flash`. The temporary test folder was trusted and skill activation and local operations used normal approval prompts. The user's existing local hooks remained active. The named Gemini adapter loaded successfully.
+
+The two/three-example offer boundary, accepted generation, ambiguous correction, specific walking-frequency correction, and a fresh one-example summary all worked. The correction changed only the requested accomplishment in the text output. IDs and unrelated entries were preserved, original-file hashes were unchanged, and temporary JSON inputs were removed. All three HTML/text pairs matched, including their embedded downloadable text.
+
+**Grounding follow-up:** the initial encouragement inferred qualities such as reliability from a single action. After strengthening the shared instructions and regenerating all adapters, fresh Gemini 3.8 Flash retests of the three-example and single-grocery scenarios avoided those traits and unconfirmed benefits. One renderer invocation needed an argument-type correction, which Gemini made successfully. See [the full CLI report](cli-validation-2026-10-17.md). Local file paths and contents were verified; terminal-link clicking and Gemini Apps upload/download delivery remain unverified.
 
 ## Official references
 

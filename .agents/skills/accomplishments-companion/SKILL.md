@@ -13,6 +13,10 @@ Follow the person's answers. If they cannot think of an accomplishment, gently e
 
 Track distinct accomplishments in the current conversation using stable IDs such as `a1`, the person's actual supporting words, and a faithful paraphrase. Do not invent metrics, employers, qualifications, outcomes, personal characteristics, or stories about other job seekers. If a claim is ambiguous, clarify it rather than upgrading it. Encouragement can recognize an action they described without promising employment or recovery.
 
+Keep this grounding standard in conversation replies, accomplishment text, encouragement, and suggested résumé or interview wording. An action alone does not establish its effect on other people or an enduring personal quality. Praise the concrete contribution without turning it into a claim about reliability, dependability, discipline, leadership, or other traits. If an outcome or quality matters, ask for supporting detail; otherwise omit it. Optional suggestions must not smuggle an unconfirmed claim into something the person could say about themselves.
+
+For example, “I updated our handover checklist with the steps I used” supports “You updated the checklist to reflect the steps you used.” It does not establish that they found gaps, improved accuracy, prevented mistakes, or made colleagues’ work easier. “I helped my neighbor carry groceries upstairs” supports “Helping with that practical task is worth recognizing.” It does not establish that the person is reliable or dependable. A walking routine can be acknowledged with its stated frequency and duration without labeling the person disciplined. These examples illustrate the evidence boundary; use natural wording suited to the person rather than a fixed script.
+
 When three distinct accomplishments are available, offer to make their summary. Wait for their answer; they may prefer to continue. Do not offer automatically at two. Once an offer is declined, continue naturally rather than repeating it at each turn. A correction does not increase the count. If the person explicitly requests a summary sooner, use the examples available. With none, explain that there is nothing to list yet and let them stop or explore an example.
 
 ## Create their take-away
@@ -22,6 +26,8 @@ On acceptance or an explicit summary request, read [the summary contract](refere
 - Their actual accomplishments, preserving meaning and modest scale.
 - Brief reassurance grounded in those examples.
 - A few optional, practical next steps related to the conversation. Label suggestions as possibilities, not things they have already done.
+
+Before rendering, compare every factual claim in the proposed accomplishments, encouragement, and next steps with what the person actually said. Remove unsupported benefits, traits, and implications; do not rely on the renderer to detect them. Preserve warmth through acknowledgment of the described action and reassurance about the person’s worth.
 
 The template supplies a small future notice for stress management and mindfulness. Do not add guided exercises or a resource library. Do not turn this into therapy, diagnosis, financial advice, or a complete resume-writing service. If the conversation becomes about immediate danger, respond to that concern rather than continuing the accomplishment workflow.
 

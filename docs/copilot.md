@@ -74,7 +74,15 @@ Local evidence is intentionally ignored rather than published: `outputs/copilot-
 
 ### Remaining boundaries
 
-Copilot CLI is still untested: `copilot` was not available on the shell path. VS Code was installed even though `code` was not on that path. VS Code results do not establish CLI, remote-workspace, cloud-agent, Microsoft 365 Copilot, or Copilot Studio behavior. Direct chat-link clicking was not verified; file delivery was verified through the integrated preview and its download controls. This was a fictional functional trial, not a new Section 508 conformance assessment or proof of emotional benefit.
+The VS Code trial alone does not establish CLI, remote-workspace, cloud-agent, Microsoft 365 Copilot, or Copilot Studio behavior. Direct chat-link clicking was not verified; file delivery was verified through the integrated preview and its download controls. This was a fictional functional trial, not a new Section 508 conformance assessment or proof of emotional benefit. A separate CLI trial follows.
+
+## Live Copilot CLI trial — October 17, 2026
+
+Copilot CLI 1.0.98 was installed in a temporary directory and authenticated through the existing account setup. Auto selected `gpt-6-luna`. A separate workspace contained only the packaged Copilot skill and an `outputs/` ignore rule. No global installation or credential copying was needed.
+
+Discovery, the zero/two/three-example conversation, accepted generation, ambiguous and specific corrections, and a fresh one-example summary passed. The ambiguous request used Copilot's question UI to ask which entry to change. The specific correction changed only walking frequency, preserved IDs and unrelated content, and left the original HTML/text hashes unchanged. The early-summary session included only the grocery-carrying example. All three pairs were labeled fictional and their embedded downloadable text matched the adjacent text files.
+
+The first noninteractive generation attempt lacked permissions and returned a text fallback without claiming files existed. Interactive approvals allowed the bundled renderer to create the files. Local file paths and contents were verified; terminal-link clicking and remote delivery were not tested. See [the full CLI report](cli-validation-2026-10-17.md) for methods, revisions, and cross-host findings.
 
 ## Official references
 

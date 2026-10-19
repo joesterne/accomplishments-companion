@@ -7,13 +7,15 @@ ROOT = Path(__file__).resolve().parents[1]
 DESCRIPTION = ('Help job seekers recognize real accomplishments, create a supportive HTML/text '
                'summary, and correct it through conversation. Use for accomplishments reflection, '
                'not resume rewriting.')
-SHARED = ('references/summary-format.md', 'scripts/render_summary.py', 'assets/summary.html')
+SUMMARY_REFERENCE = 'references/summary-format.md'
+SHARED = ('scripts/render_summary.py', 'assets/summary.html')
 
 
 def package_files(host, name, root=ROOT):
     source = root / '.agents/skills/accomplishments-companion'
     original = (source / 'SKILL.md').read_text(encoding='utf-8')
     _, _, body = original.split('---', 2)
+    summary = (source / SUMMARY_REFERENCE).read_text(encoding='utf-8')
     replacements = {
         'The renderer creates outputs under an ignored local folder; it does not make the host conversation private or local-only.':
         'Choose the output location and file-delivery method using the {host} runtime reference; the renderer does not make the host conversation private or local-only.',
@@ -21,14 +23,15 @@ def package_files(host, name, root=ROOT):
         'After a successful run, deliver the exact HTML and text files returned using the host-specific method in the {host} runtime reference.',
     }
     for old, new in replacements.items():
-        if body.count(old) != 1:
+        if summary.count(old) != 1:
             raise ValueError('Shared skill changed; review the ' + host + ' adapter before packaging.')
-        body = body.replace(old, new.format(host=host.capitalize()))
-    body = body.replace('# Accomplishments Companion', '# Accomplishments Companion\n\n'
-        f'Before creating files, read [{host.capitalize()} runtime and file delivery](references/{host}-runtime.md). '
+        summary = summary.replace(old, new.format(host=host.capitalize()))
+    summary = summary.replace('# Summary contract', '# Summary contract\n\n'
+        f'Before creating files, read [{host.capitalize()} runtime and file delivery]({host}-runtime.md). '
         'Its host-specific output and privacy guidance takes precedence over local project defaults '
         'in the shared summary contract.', 1)
     files = {'SKILL.md': ('---\nname: ' + name + '\ndescription: ' + DESCRIPTION + '\n---' + body).encode('utf-8')}
+    files[SUMMARY_REFERENCE] = summary.encode('utf-8')
     files.update({name: (source / name).read_bytes() for name in SHARED})
     files['references/' + host + '-runtime.md'] = (root / 'packaging' / (host + '-runtime.md')).read_bytes()
     files['LICENSE'] = (root / 'LICENSE').read_bytes()

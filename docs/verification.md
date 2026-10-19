@@ -6,6 +6,10 @@ A reported desktop test appeared frozen after follow-ups about the first accompl
 
 Separate fictional CLI checks using `codex-cli 0.162.1`, `gpt-5.6-sol`, and medium reasoning exposed `429 Too Many Requests` with automatic retry delays of approximately 222 and 205 seconds. This provides a plausible explanation for a long silent wait, but the original desktop turn did not expose that error, so its cause is not confirmed. The two rate-limited test processes were stopped before their scheduled retries. The skill cannot change host request retries or guarantee response latency.
 
+To reduce the part of response overhead controlled by this repository, the skill now uses progressive disclosure. The collection and grounding rules needed on every turn remain in `SKILL.md`; rendering, correction, privacy, failure, and host-delivery mechanics moved into `references/summary-format.md`, which is read only after a summary or correction request. This reduced the canonical always-loaded entrypoint from 7,101 to 3,251 bytes (54.2%). The regenerated Claude, Gemini, and Copilot entrypoints fell by 57.0–57.1% because their runtime-delivery guidance is now deferred with the summary contract too.
+
+Byte size is a stable payload proxy, not an observed response-time result. No fresh provider trial establishes a user-visible latency improvement, and a smaller skill cannot remove provider rate limits or retry waits. The refactor preserves those external limitations rather than claiming to fix the 241,994 ms desktop turn.
+
 The conversation also revealed unnecessary follow-up questions after an example was already concrete. The shared skill now treats a supported action as sufficient, skips optional detail collection when the example is clear, and normally moves on after one focused follow-up. Material ambiguity and a person's wish to explore further remain exceptions. Multiple answers about one experience remain one accomplishment. Collection turns should end with a visible reply; pauses are still respected. Claude, Gemini, and Copilot copies were regenerated from this source.
 
 Validation:
@@ -14,6 +18,7 @@ Validation:
 - The additional clear-example and three-distinct-example checks were interrupted by the rate limiting described above; they are not recorded as passes. No fresh live Claude, Gemini, or Copilot trial was run for this edit.
 - All 19 renderer/package unit tests, all three package consistency checks, the skill validator, and `git diff --check` passed. The validator's PyYAML dependency was installed in a temporary environment only.
 - Regression scenarios for sufficient detail and multiple answers about one example were added to `tests/conversation-scenarios.md`. Raw personal conversation content was not added to source fixtures or this report.
+- The progressive-disclosure refactor passes 22 unit tests, the skill validator, all three host-package consistency checks, and `git diff --check`. A prompt-budget regression test caps the canonical always-loaded entrypoint at 5,000 bytes and verifies that summary and host-delivery mechanics remain in the linked contract.
 
 If this recurs, check for a pending approval and whether the turn eventually completes. A fresh chat with a short continuation prompt is another recovery option documented in [OpenAI's troubleshooting guidance](https://learn.chatgpt.com/docs/reference/troubleshooting#stuck-states-and-recovery-patterns). Repeatedly submitting the same message can add unnecessary requests; a skill edit does not repair a pending host request.
 

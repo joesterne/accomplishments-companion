@@ -10,6 +10,8 @@ Open this repository as a Codex project and ask to use **Accomplishments Compani
 
 Talk about things you have done or feel proud of. The companion uses relevant questions about work and everyday life when examples are hard to find. It offers a summary after three distinct accomplishments, or honors an earlier explicit request. Corrections stay in the conversation.
 
+A concrete action is enough to count; you do not need a metric or a job title. Once an example is clear, the companion moves to another experience, normally asking at most one follow-up unless clarification is needed or you want to explore further. If Codex appears stuck without replying, check its turn/approval status: host request delays can happen before the skill responds. See the [pacing and delayed-response investigation](docs/verification.md#october-19-2026-delayed-codex-turn-and-conversation-pacing).
+
 The helper uses Python 3.9+ and only its standard library; no extra API key or runtime packages are required. Conversation access and usage limits come from your existing Codex setup.
 
 ## Try it in Claude

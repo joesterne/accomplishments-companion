@@ -1,5 +1,24 @@
 # Verification — conversation, revisions, and outputs
 
+## October 19, 2026: delayed Codex turn and conversation pacing
+
+A reported desktop test appeared frozen after follow-ups about the first accomplishment. Read-only inspection found the last user message accepted, with no tool call, renderer execution, approval request, or failure recorded for that turn. It eventually completed on its own after 241,994 ms and asked about another accomplishment. The desktop session used the OpenAI provider, model `gpt-5.6-sol`, and bundled runtime `0.163.0-alpha.10.2`.
+
+Separate fictional CLI checks using `codex-cli 0.162.1`, `gpt-5.6-sol`, and medium reasoning exposed `429 Too Many Requests` with automatic retry delays of approximately 222 and 205 seconds. This provides a plausible explanation for a long silent wait, but the original desktop turn did not expose that error, so its cause is not confirmed. The two rate-limited test processes were stopped before their scheduled retries. The skill cannot change host request retries or guarantee response latency.
+
+The conversation also revealed unnecessary follow-up questions after an example was already concrete. The shared skill now treats a supported action as sufficient, skips optional detail collection when the example is clear, and normally moves on after one focused follow-up. Material ambiguity and a person's wish to explore further remain exceptions. Multiple answers about one experience remain one accomplishment. Collection turns should end with a visible reply; pauses are still respected. Claude, Gemini, and Copilot copies were regenerated from this source.
+
+Validation:
+
+- A fictional supplied-conversation replay about organizing volunteer supplies completed both before and after the edit. Both replies acknowledged the contribution and asked about another experience, without inventing an outcome, generating files, or treating three answers as three accomplishments. This does **not** reproduce or prove a fix for the desktop delay.
+- The additional clear-example and three-distinct-example checks were interrupted by the rate limiting described above; they are not recorded as passes. No fresh live Claude, Gemini, or Copilot trial was run for this edit.
+- All 19 renderer/package unit tests, all three package consistency checks, the skill validator, and `git diff --check` passed. The validator's PyYAML dependency was installed in a temporary environment only.
+- Regression scenarios for sufficient detail and multiple answers about one example were added to `tests/conversation-scenarios.md`. Raw personal conversation content was not added to source fixtures or this report.
+
+If this recurs, check for a pending approval and whether the turn eventually completes. A fresh chat with a short continuation prompt is another recovery option documented in [OpenAI's troubleshooting guidance](https://learn.chatgpt.com/docs/reference/troubleshooting#stuck-states-and-recovery-patterns). Repeatedly submitting the same message can add unnecessary requests; a skill edit does not repair a pending host request.
+
+## Original build verification
+
 Verified on October 14, 2026. These results cover the first build step's mechanical checks. The learner confirmed the first-use trial worked as expected. Second-step checks below are recorded; the learner accepted the final trial with "It works".
 
 ## Renderer and skill validation

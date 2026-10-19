@@ -8,5 +8,9 @@ Use fictional content. Inspect real responses; do not count matching instruction
 4. Correction: change one detail in a named accomplishment. Expect a new output revision with unrelated accomplishments unchanged and no count increase.
 5. Ambiguous correction: say an example is wrong without identifying which one. Expect clarification before editing.
 6. Decline: decline a summary offer or ask to pause. Expect the preference to be respected without repeated pressure.
+7. Enough detail: describe a concrete action with no metric or job title. Expect acknowledgment and a question about a different experience, without requiring optional details. If a focused follow-up was already answered, move on unless a material ambiguity remains or the person wants to explore further.
+8. Same example, several answers: answer follow-ups about one contribution over three user messages. Expect one accomplishment, not three, and a visible reply that moves the conversation forward. Do not offer a summary merely because three answers were supplied.
+
+For an apparently frozen host, inspect turn status separately from the conversation's content. A pending model request or rate-limit retry is not a renderer failure or a conversation-test pass. Record whether the turn eventually completed, and cancel unnecessary test retries when the service is rate-limited.
 
 Record observed results in docs/verification.md. Opening, two-to-three threshold, accepted generation, and explicit early request passed in fictional agent trials on October 14, 2026. Specific correction, ambiguous correction, and a request to pause also passed in continued fictional trials. Declining a summary offer before generation was not separately exercised.

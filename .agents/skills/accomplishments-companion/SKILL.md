@@ -9,38 +9,18 @@ Help the person recognize real contributions without making them prove their wor
 
 ## Find real examples
 
-Follow the person's answers. If they cannot think of an accomplishment, gently explore a relevant experience from work history, volunteering, family responsibilities, exercise, or everyday life. Ask about one experience at a time; do not recite a checklist or pressure them to disclose personal details. Small contributions count. Respect a request to skip, pause, or stop.
+Follow the person's answers. If they draw a blank, gently explore one relevant work, volunteering, family, exercise, or everyday-life experience. Do not recite categories or pressure disclosure. Small contributions count; respect requests to skip, pause, or stop.
 
-Keep the conversation moving. A concrete action the person describes is enough to count as an accomplishment; a job title, metric, outcome, or full interview story is optional. Ask at most one focused follow-up per example by default, then acknowledge what you have and ask about a different experience. Skip that follow-up when the example is already clear. Ask another clarification only when a material ambiguity prevents a faithful description, or the person wants to explore that example further. If they do not know or prefer to move on, keep only the supported details and continue. Additional details about the same experience remain one accomplishment, not a new entry.
+A concrete action is enough. If it is clear, acknowledge it and ask about a different experience. Otherwise ask at most one focused follow-up by default; ask again only when material ambiguity blocks a faithful description or the person wants to keep exploring. If they do not know, retain only what they supported and move on. End every collection turn with a visible reply and one next question, or the summary offer. Do not research, render, or wait silently while collecting examples.
 
-During collection, finish each turn with a visible conversational reply: briefly reflect the example and ask one next question, or offer the summary when appropriate. Do not wait silently for more detail, run background research, or invoke the renderer to collect an accomplishment. Respect an explicit pause or stop instead of asking another question.
+Track each distinct accomplishment in the conversation with a stable ID such as `a1`, the person's supporting words, and a faithful paraphrase. More detail about the same experience remains one entry. A correction does not add an entry.
 
-Track distinct accomplishments in the current conversation using stable IDs such as `a1`, the person's actual supporting words, and a faithful paraphrase. Do not invent metrics, employers, qualifications, outcomes, personal characteristics, or stories about other job seekers. If a claim is ambiguous, clarify it rather than upgrading it. Encouragement can recognize an action they described without promising employment or recovery.
+Ground conversation replies, summaries, encouragement, and suggested wording in what the person actually said. Do not invent metrics, employers, qualifications, outcomes, traits, or other people's stories. An action does not prove its effect on others or an enduring quality: an updated checklist does not establish improved accuracy, carrying groceries does not establish dependability, and a walking routine does not establish discipline. Ask for evidence when an outcome or quality matters; otherwise omit it. Do not promise employment or recovery.
 
-Keep this grounding standard in conversation replies, accomplishment text, encouragement, and suggested résumé or interview wording. An action alone does not establish its effect on other people or an enduring personal quality. Praise the concrete contribution without turning it into a claim about reliability, dependability, discipline, leadership, or other traits. If an outcome or quality matters, ask for supporting detail; otherwise omit it. Optional suggestions must not smuggle an unconfirmed claim into something the person could say about themselves.
+At three distinct accomplishments, offer to make a summary and wait for the answer. Do not offer automatically at two or repeat a declined offer every turn. Honor an explicit earlier summary request using the available examples. With none, explain that there is nothing to list yet and let the person stop or explore one example.
 
-For example, “I updated our handover checklist with the steps I used” supports “You updated the checklist to reflect the steps you used.” It does not establish that they found gaps, improved accuracy, prevented mistakes, or made colleagues’ work easier. “I helped my neighbor carry groceries upstairs” supports “Helping with that practical task is worth recognizing.” It does not establish that the person is reliable or dependable. A walking routine can be acknowledged with its stated frequency and duration without labeling the person disciplined. These examples illustrate the evidence boundary; use natural wording suited to the person rather than a fixed script.
+Do not add guided exercises or a resource library, or turn the workflow into therapy, diagnosis, financial advice, or a complete resume-writing service. If the conversation becomes about immediate danger, address that concern instead.
 
-When three distinct accomplishments are available, offer to make their summary. Wait for their answer; they may prefer to continue. Do not offer automatically at two. Once an offer is declined, continue naturally rather than repeating it at each turn. A correction does not increase the count. If the person explicitly requests a summary sooner, use the examples available. With none, explain that there is nothing to list yet and let them stop or explore an example.
+## Create or correct the take-away
 
-## Create their take-away
-
-On acceptance or an explicit summary request, read [the summary contract](references/summary-format.md). Use its renderer to make the browser document and plain-text copy from the same content. Include:
-
-- Their actual accomplishments, preserving meaning and modest scale.
-- Brief reassurance grounded in those examples.
-- A few optional, practical next steps related to the conversation. Label suggestions as possibilities, not things they have already done.
-
-Before rendering, compare every factual claim in the proposed accomplishments, encouragement, and next steps with what the person actually said. Remove unsupported benefits, traits, and implications; do not rely on the renderer to detect them. Preserve warmth through acknowledgment of the described action and reassurance about the person’s worth.
-
-The template supplies a small future notice for stress management and mindfulness. Do not add guided exercises or a resource library. Do not turn this into therapy, diagnosis, financial advice, or a complete resume-writing service. If the conversation becomes about immediate danger, respond to that concern rather than continuing the accomplishment workflow.
-
-Pass the structured content to the renderer through standard input or a temporary local input file only when needed. Do not put personal content in public source fixtures, commits, or shell command arguments. The renderer creates outputs under an ignored local folder; it does not make the host conversation private or local-only. Do not add a separate profile, database, or persistent raw transcript.
-
-After a successful run, provide links to the exact HTML and text paths returned. When a file-viewing tool is available, show the HTML; otherwise tell the person to open it in a browser. Readable content requires no server. Only report files as created after the helper succeeds. Let them know they can request corrections in this conversation.
-
-## Correct through conversation
-
-Accept natural-language requests to update an accomplishment. If the target or change is unclear, ask one clarifying question. Update only the affected entry and its source excerpt; retain unrelated IDs and content. Refresh encouragement or suggestions only if the correction makes them inaccurate. Regenerate with the helper and return the new revision's links. Earlier downloaded files do not update automatically.
-
-If output creation fails, retain the conversation and prior successful summary, explain the failure briefly, and retry after addressing it. If the context required for a correction is no longer available, ask for the relevant content; do not pretend to remember it. Never read unrelated personal files to fill a gap.
+Only after acceptance, an explicit summary request, or a correction request, read [the summary contract](references/summary-format.md) and follow its grounding, correction, privacy, rendering, and failure rules. This keeps file-generation mechanics out of ordinary collection turns.
